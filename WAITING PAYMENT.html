@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WAITING PAYMENT</title>
+    <style>
+      .label {
+        box-sizing: border-box;
+        white-space: nowrap;
+        border-radius: 0.2em;
+        padding: 0.12em 0.4em 0.14em;
+        margin: 0 0.42em;
+        text-align: center;
+        color: #ffffff;
+        /* font-size: 0.75em; */
+        font-weight: 700;
+        line-height: 1;
+        display: inline;
+        white-space: nowrap;
+        vertical-align: baseline;
+        position: relative;
+        top: -0.15em;
+        background-color: #999999;
+      }
+
+      .label.color-blue {
+        background-color: #6f9ad1;
+      }
+
+      .label.color-red {
+        background-color: #ce4141;
+      }
+
+      .label.color-green {
+        background-color: #9bc268;
+      }
+
+      .label.color-orange {
+        background-color: #dea154;
+      }
+
+      .label.color-yellow {
+        background-color: #e9d641;
+      }
+
+      .label.color-purple {
+        background-color: #9f83d1;
+      }
+
+      [data-after-text],
+      [data-before-text] {
+        --badge-offset-x: calc(0px - var(--badge-size) / 3);
+        --badge-offset-y: calc(0px - var(--badge-size) / 3);
+        --badge-size: 1.5rem;
+        --circle-size: 2rem;
+        --dot-offset: 0.5rem;
+        --dot-size: 0.5rem;
+        --b: initial;
+        --bgc: hsl(195, 100%, 30%);
+        --bdrs: 0;
+        --c: hsl(195, 100%, 99%);
+        --d: inline-flex;
+        --fz: 0.625rem;
+        --fw: 700;
+        --h: auto;
+        --l: initial;
+        --m: 0.4rem;
+        --p: 0;
+        --pos: static;
+        --r: initial;
+        --t: initial;
+        --tt: uppercase;
+        --w: initial;
+        position: relative;
+      }
+
+      [data-after-text]:not([data-after-text=""])::after {
+        content: attr(data-after-text);
+      }
+
+      [data-before-text]:not([data-before-text=""])::before {
+        content: attr(data-before-text);
+      }
+
+      [data-after-text]:not([data-after-text=""])::after,
+      [data-before-text]:not([data-before-text=""])::before {
+        align-items: center;
+        background: var(--bgc);
+        border-radius: var(--bdrs);
+        bottom: var(--b);
+        box-shadow: var(--bxsh);
+        box-sizing: border-box;
+        color: var(--c);
+        display: var(--d);
+        font-size: var(--fz);
+        font-weight: var(--fw);
+        height: var(--h);
+        justify-content: center;
+        left: var(--l);
+        padding: var(--p);
+        position: var(--pos);
+        right: var(--r);
+        text-decoration: none;
+        text-transform: var(--tt);
+        top: var(--t);
+        width: var(--w);
+      }
+
+      /* MODIFIERS */
+      [data-after-type*="pill"]::after {
+        margin-inline-start: 1ch;
+      }
+
+      [data-before-type*="pill"]::before {
+        margin-inline-end: 1ch;
+      }
+
+      [data-after-type*="pill"]::after,
+      [data-before-type*="pil"]::before {
+        --bdrs: 1rem;
+        --p: 0.25rem 0.75rem;
+        --pos: relative;
+        --t: -1px;
+      }
+
+      /* COLORS */
+      [data-after-type*="blue"]::after,
+      [data-before-type*="blue"]::before {
+        --bgc: #007acc;
+      }
+
+      [data-after-type*="darkgray"]::after,
+      [data-before-type*="darkgray"]::before {
+        --bgc: #706e6b;
+        --c: #fff;
+      }
+
+      [data-after-type*="green"]::after,
+      [data-before-type*="green"]::before {
+        --bgc: #04844b;
+      }
+
+      [data-after-type*="lightgray"]::after,
+      [data-before-type*="lightgray"]::before {
+        --bgc: #ecebea;
+        --c: #080707;
+      }
+
+      [data-after-type*="orange"]::after,
+      [data-before-type*="orange"]::before {
+        --bgc: #ffb75d;
+        --c: #080707;
+      }
+
+      [data-after-type*="red"]::after,
+      [data-before-type*="red"]::before {
+        --bgc: #c23934;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="font-size: 11pt; background-color: #fafafa; font-family: Arial,sans-serif; width: 50vw; min-width: 600px; margin-left: auto; margin-right: auto;">
+      <div style="background-color: white; padding-bottom: 0.1em; margin-bottom: 1em; margin-left: auto; margin-right: auto; max-width: 600px; width: 600px; font-family: Arial,sans-serif; font-size: 11pt;">
+        <table id="m_-5307644471836045794header" style="color: white; background-color: #0045ad; min-width: 100%; padding: 1em; font-family: Arial,sans-serif; font-size: 11pt;">
+          <tbody>
+            <tr>
+              <td style="max-width: 25%;">
+                <img class="CToWUd" style="max-width: 30vw;" src="https://prayaqa.ilcs.co.id/media/logos/logo-pelindo-putih-no-tagline.png" width="200" data-bit="iit">
+              </td>
+              <td style="width: 75%;">
+                <div style="text-align: right;">
+                  <b>{currentDate}</b>
+                </div>
+                <div style="text-align: right; padding-top: 8px;">
+                  <b>{paymentVia}</b>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table id="m_-5307644471836045794thanks" style="width: 97%; margin-top: 1em; margin-left: 1em; margin-right: 2em;">
+          <tbody style="font-size: 14px;">
+            <tr>
+              <td>
+                <!-- <span class="label color-red" style="float: right; margin-right: 20px;">{statusPaid}</span> -->
+                <span data-before-text="MENUNGGU PEMBAYARAN" data-before-type="red pill" style="float: right;"></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;">
+                <h3>Halo, {customerName}.</h3>
+                <p>Silahkan Lakukan Pembayaran dengan rincian dibawah ini, pastikan nominal yang dibayarkan hingga 3 digit terakhir. :)</p>
+                <!-- <p> Kode Bayar hanya berlaku selama 3 jam setelah berhasil di-generate, pastikan pembayaran dilakukan sebelum <span data-before-text="{paidBefore}" data-before-type="blue pill"></span> -->
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table id="m_-5307644471836045794header-total" style="text-align: center; padding: 0.5em; width: 74.6667%; border: 1px solid rgb(232, 232, 232); background-color: rgb(250, 250, 250); margin: 0.5em auto; height: 37.2383px;">
+          <tbody>
+            <tr style="height: 37.2383px;">
+              <td style="font-weight: bold; font-size: 13pt; padding: 0.2em 0.2em 0.2em 1em; width: 58.4428%; height: 37.2383px; text-align: left;">Total yang harus dibayar</td>
+              <td style="font-weight: bold; color: #c23934; font-size: 13pt; text-align: right; padding: 0.2em; width: 35.2476%; height: 37.2383px;">Rp{amountTotal}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="m_-5307644471836045794delivery-details-header" style="margin-top: 2em; margin-left: 1em; font-size: 14px; font-weight: bold;">List Request Booking</p>
+        <table id="m_-5307644471836045794delivery-details" style="padding-left: 1em; width: 96%; margin-right: 1em; padding-top: 1em; padding-bottom: 0.5em; border: 1px solid #e8e8e8; margin-left: 0.8em; margin-bottom: 1em;">
+          <tbody>
+            <tr style="vertical-align: top;">
+              <td style="width: 50%; vertical-align: top;">
+                <table style="width: 100%; margin-right: 1em; text-align: center;">
+                  <thead style="font-weight: bold; font-size: 12px;">
+                    <tr>
+                      <td>No. Request</td>
+                      <td>Kode Pembayaran</td>
+                      <td>No. Proforma</td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <hr>
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody style="font-size: 12px;">
+                    <tr>
+                      <td>{requestId}</td>
+                      <td>
+                        <span class="label color-blue">{paymentCode}</span>
+                      </td>
+                      <td>{proformaNo}</td>
+                      <!-- <td style="font-weight:bold;text-align:right;vertical-align:top">Maks. 5kg</td> -->
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="m_-5307644471836045794order-details-header" style="margin-left: 1em; margin-top: 2em; font-size: 14px; font-weight: bold;">Rincian pembayaran</p>
+        <table id="m_-5307644471836045794orders" style="padding: 1em; border: 1px solid rgb(232, 232, 232); width: 96%; margin-left: auto; margin-right: auto; height: 162.363px;">
+          <tbody style="font-size: 14px;">
+            <tr style="height: 19.5898px;">
+              <td style="width: 59.238%; height: 19.5898px;" colspan="2">Discount</td>
+              <td style="text-align: right; vertical-align: top; width: 3.82778%; height: 19.5898px;">&nbsp;</td>
+              <td style="text-align: right; vertical-align: top; width: 36.8859%; height: 19.5898px;">Rp{discount}</td>
+            </tr>
+            <tr style="height: 19.5898px;">
+              <td style="width: 59.238%; height: 19.5898px;" colspan="2">Administrasi</td>
+              <td style="text-align: right; vertical-align: top; width: 3.82778%; height: 19.5898px;">&nbsp;</td>
+              <td style="text-align: right; vertical-align: top; width: 36.8859%; height: 19.5898px;">Rp{administration}</td>
+            </tr>
+            <tr style="height: 19.5898px;">
+              <td style="width: 59.238%; height: 19.5898px;" colspan="2">Dasar Peng. Pajak</td>
+              <td style="text-align: right; vertical-align: top; width: 3.82778%; height: 19.5898px;">&nbsp;</td>
+              <td style="text-align: right; vertical-align: top; width: 36.8859%; height: 19.5898px;">Rp{dasarPengPajak}</td>
+            </tr>
+            <tr style="height: 19.5898px;">
+              <td style="width: 59.238%; height: 19.5898px;" colspan="2">Jumlah PPN</td>
+              <td style="text-align: right; vertical-align: top; width: 3.82778%; height: 19.5898px;">&nbsp;</td>
+              <td style="text-align: right; vertical-align: top; width: 36.8859%; height: 19.5898px;">Rp{ppn}</td>
+            </tr>
+            <tr style="height: 19.5898px;">
+              <td style="width: 59.238%; height: 19.5898px;" colspan="2">Jumlah PPN Dibebaskan</td>
+              <td style="text-align: right; vertical-align: top; width: 3.82778%; height: 19.5898px;">&nbsp;</td>
+              <td style="text-align: right; vertical-align: top; width: 36.8859%; height: 19.5898px;">Rp{ppnDibebaskan}</td>
+            </tr>
+            <tr style="height: 19.5898px;">
+              <td style="width: 59.238%; height: 19.5898px;" colspan="2">Materai</td>
+              <td style="text-align: right; vertical-align: top; width: 3.82778%; height: 19.5898px;">&nbsp;</td>
+              <td style="text-align: right; vertical-align: top; width: 36.8859%; height: 19.5898px;">Rp{amountMaterai}</td>
+            </tr>
+            <tr style="height: 15.2344px;">
+              <td style="width: 99.9516%; height: 15.2344px;" colspan="4">
+                <hr>
+              </td>
+            </tr>
+            <tr style="height: 19.5898px;">
+              <td style="font-weight: bold; width: 59.238%; height: 19.5898px;" colspan="2">Total yang harus dibayar pakai {paymentVia}</td>
+              <td style="text-align: right; vertical-align: top; width: 3.82778%; height: 19.5898px;">&nbsp;</td>
+              <td style=" color : #c23934;font-weight: bold; text-align: right; vertical-align: top; width: 36.8859%; height: 19.5898px;">Rp{amountTotal}</td>
+            </tr>
+            <tr style="height: 10px;"></tr>
+          </tbody>
+        </table>
+        <p id="m_-5307644471836045794delivery-details-header" style="margin-top: 2em; margin-left: 1em; font-size: 14px; font-weight: bold;">Aditional Information</p>
+        <table id="m_-5307644471836045794delivery-details" style="padding-left: 1em; width: 96%; margin-right: 1em; padding-top: 1em; padding-bottom: 0.5em; border: 1px solid #e8e8e8; margin-left: 0.8em; margin-bottom: 1em;">
+          <tbody style="font-size: 14px;">
+            <tr style="vertical-align: top;">
+              <td style="vertical-align: top;">
+                <table id="m_-5307644471836045794address" style="margin-right: 1em; font-size: 14px; width: 100.457%; height: 73.8085px;">
+                  <tbody>
+                    <tr style="vertical-align: top; height: 21.8359px;">
+                      <td style="width: 7.11704%; height: 21.8359px;">
+                        <img class="CToWUd" src="https://ci6.googleusercontent.com/proxy/YRK6H3W4GGX5yV7torP79VhwnvGmbQ_J36-z1prthTyK9FG-G0Txm0LgMnOmkbnmyPKzEVUnESFdKq1O5VLyJDpul2l6ueL6T41kr-ppfsM1fT2XIdt5KGUYHcOEGH60Zg7UtmVLRHQxW5H6OpgqBlqShQq_NfHis7NdC0eMgk0gmSBW-SEj1Qj-CtKaXJCEI8Vq4p9XcAI=s0-d-e1-ft#https://i.gojekapi.com/darkroom/customer-platform/v2/images/9000727f-2512-4e0e-a831-695e93cd7741_order_receipt_destination_ic_v3.png" width="20" height="20" data-bit="iit">
+                      </td>
+                      <td style="width: 92.8774%; height: 21.8359px;">Customer Info</td>
+                    </tr>
+                    <tr style="height: 22.3828px;">
+                      <td style="width: 7.11704%; height: 22.3828px;">&nbsp;</td>
+                      <td style="font-weight: bold; font-size: 12pt; margin-top: 0px; width: 92.8774%; height: 22.3828px;">{customerName}</td>
+                    </tr>
+                    <tr style="height: 19.5898px;">
+                      <td style="width: 7.11704%; height: 19.5898px;">&nbsp;</td>
+                      <td style="width: 92.8774%; height: 19.5898px;">{customerCode} | {customerPhoneNumber}</td>
+                    </tr>
+                    <tr style="height: 10px;">
+                      <td style="width: 7.11704%; height: 10px;">&nbsp;</td>
+                      <td style="width: 92.8774%; height: 10px;">{customerAddress}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-left: auto; margin-right: auto; max-width: 600px; width: 600px;">
+        <table id="m_-5307644471836045794help-links" style="text-align: center; width: 90%; margin-top: 3em; margin-left: auto; margin-right: auto;">
+          <tbody style="font-size: 14px;">
+            <tr>
+              <td style="width: 30%; vertical-align: top;">
+                <img src="https://prayaqa.ilcs.co.id/media/logos/bantuan.png" width="16" height="16">&nbsp; <a style="text-decoration: none;" href="https://ilcs.support/" target="_blank" rel="noopener"> Bantuan</a>
+              </td>
+              <td style="width: 30%; vertical-align: top;">
+                <img src="https://prayaqa.ilcs.co.id/media/logos/laporkan-masalah.png" width="16" height="16">&nbsp; <a style="text-decoration: none;" href="" target="_blank" rel="noopener"> Laporkan masalah</a>
+              </td>
+              <td style="width: 30%; vertical-align: top;">
+                <img src="https://prayaqa.ilcs.co.id/media/logos/tentang-pelindo.png" width="16" height="16">&nbsp; <a style="text-decoration: none;" href="http://pelindo.co.id/" target="_blank" rel="noopener"> Tentang Pelindo</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="text-align: center; width: 100%; padding: 1em;">
+          <tbody style="font-size: 14px;">
+            <tr>
+              <td>Total yang tercantum adalah total yang harus dibayarkan ketika melakukan proses pembayaran. Email ini dapat dijadikan sebagai acuan pembayaran yang sah.</td>
+            </tr>
+          </tbody>
+        </table>
+        <table id="m_-5307644471836045794socials" style="text-align: center; width: 50%; margin-left: auto; margin-right: auto;">
+          <tbody style="font-size: 14px;">
+            <tr style="text-align: center;">
+              <td colspan="5">
+                <p>
+                  <strong>Kontak Pelindo lewat :</strong>
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td width="20%">
+                <a href="https://www.instagram.com/pelindo/?hl=en" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?q=https://www.instagram.com/gojekindonesia/&amp;source=gmail&amp;ust=1675142250374000&amp;usg=AOvVaw3CqCff6Zm7w-L0floMXYqQ">
+                  <img class="CToWUd" src="https://ci4.googleusercontent.com/proxy/eHt5B6GvLK7XBLubPebDDyEgBl7G3bDTh-AmKLufvKUfmMba6diNuZnZiCJy0O_sJbHznWOpi188PMAIUA9FRy-SER-jBOmVbzMNhrv3s60IaXYUi0cOnpcQS3UIS8bljbg4BYasP8suXSvHb2oNDA6mL5WI0Fkxo3RQxLt6nX8KvWM6a62wyNRVmjgbTA=s0-d-e1-ft#https://i.gojekapi.com/darkroom/customer-platform/v2/images/b53053cb-9908-4ccc-868a-1c243dfc2ae5_order-receipt-Group-19.png" width="28" height="28" data-bit="iit">
+                </a>
+              </td>
+              <td width="20%">
+                <a href="https://twitter.com/indonesiaport" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?q=https://twitter.com/gojekindonesia&amp;source=gmail&amp;ust=1675142250374000&amp;usg=AOvVaw1FZSGJXoX6frC4rF8mlrTI">
+                  <img class="CToWUd" src="https://ci6.googleusercontent.com/proxy/0obpLy89r3f40__rWmOK5STR-6yGOKMu5uX57eXPmkhF6R5evu7M8VwrLsVWQmVeAHxxHNnUblcUlv0bjbDd_oln6mehWM4hTo9wDtqld0OUCi_3BX3Q3Xd59O_g3f0oyT-TmNOisYZVCdNqLkbpXiOKWVAzHZLozN9ZOZR8JTdLB_Kt5PoZuQret4qZIQ=s0-d-e1-ft#https://i.gojekapi.com/darkroom/customer-platform/v2/images/4d8397a5-9bea-4603-b128-42d762db09b9_order-receipt-Group-16.png" width="28" height="28" data-bit="iit">
+                </a>
+              </td>
+              <td width="20%">
+                <a href="https://www.facebook.com/Indonesiaport" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/gojekindonesia&amp;source=gmail&amp;ust=1675142250374000&amp;usg=AOvVaw03s1E3zXS9ikDDYyes9ZWV">
+                  <img class="CToWUd" src="https://ci5.googleusercontent.com/proxy/VbeXtVSdsvyWVqOhzaFpqESDzjhdmQokWoLqV13n0CODr6JgpPK4HxwAUYAzquLbdwndocIe5BayDwDiF1_5lINRAzr_ZhfkhTcFm3athOYOd7yEZjAU1ESnqYnh0QOZfFGoxdgPhRilIo0OlDiFHHEAJ_K_V0v4cRyhsFhLiaAEmMA4lBjvkDMJbxGC5Q=s0-d-e1-ft#https://i.gojekapi.com/darkroom/customer-platform/v2/images/13880da3-3a6f-495d-8458-db42d3ad48d2_order-receipt-Group-18.png" width="28" height="28" data-bit="iit">
+                </a>
+              </td>
+              <td width="20%">
+                <a href="https://www.youtube.com/user/IndonesiaPortCorp" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?q=https://www.youtube.com/channel/UCmlKSK0OKn_B3oPwElW4n5w&amp;source=gmail&amp;ust=1675142250374000&amp;usg=AOvVaw2ilh14hBGU4brxUFE2QxeJ">
+                  <img class="CToWUd" src="https://ci6.googleusercontent.com/proxy/hluP4Q8kYwgH3hCGQpqghR_I6Wavf4s2Q76Mmz4pl9Le4n67AqsXqSHkpG9JRpFmUkEBbHejF3Rm8I2z6nmHiLYO5sByIrxgF5XfO2LB1UNzOQckJbGNSHZC4JpDL5HkN-nz0XaH2ZWXFiPbntIQLqD6GdYr3X_v0OHPsQkzuWLK0bper0ZiuuirwgId8w=s0-d-e1-ft#https://i.gojekapi.com/darkroom/customer-platform/v2/images/5a83275f-753f-47a1-85ca-a876ec3c03c2_order-receipt-Group-20.png" width="28" height="28" data-bit="iit">
+                </a>
+              </td>
+              <td width="20%">
+                <a href="https://www.linkedin.com/company/ptpelabuhan-indonesia-persero/" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/gojek/&amp;source=gmail&amp;ust=1675142250374000&amp;usg=AOvVaw2S8uoIoF93xTWf4ZaY0MpO">
+                  <img class="CToWUd" src="https://ci3.googleusercontent.com/proxy/nKbeGF2NriYmKym15D4CvJmYZ08zSbDZR4dJPnp4KAuknYqkZzG9uIyG60miEvbJs_XbhtKCNHMX416cAUxyaVifmlKIHJZjzE8Us20G3RP9G1905DUYeA91V0xvZSMCTRTivd14g_iRSB45sOf20ygAxJGogdu0A5K4NzqbsEmvYzGqJgWANaJ3pXgkQw=s0-d-e1-ft#https://i.gojekapi.com/darkroom/customer-platform/v2/images/26ee71cc-1573-42c0-a024-798351532928_order-receipt-Group-21.png" width="28" height="28" data-bit="iit">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table id="m_-5307644471836045794gojek-address" style="width: 60%; text-align: center; margin-left: auto; margin-right: auto; margin-top: 2em;">
+          <tbody style="font-size: 14px;">
+            <tr>
+              <td style="max-width: 200px;">
+                <img class="CToWUd" src="https://prayaqa.ilcs.co.id/media/logos/logo-pelindo-warna-with-tagline.png" height="30" data-bit="iit">
+                <p>PT Pelabuhan Indonesia (Persero) Jl. Pasoso No.1, Tanjung Priok, Jakarta Utara, 14310, Indonesia</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
